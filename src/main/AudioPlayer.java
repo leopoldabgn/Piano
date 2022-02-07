@@ -198,7 +198,7 @@ public class AudioPlayer
 	
 	public void finalize()
 	{
-		System.out.println("L'objet "+this.getClass().getName()+" a ete supprimé !");
+		// System.out.println("L'objet "+this.getClass().getName()+" a ete supprime !");
 	}
 	
 }
