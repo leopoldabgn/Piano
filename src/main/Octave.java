@@ -140,5 +140,24 @@ public class Octave extends JPanel
 			sharpKeys[i].refreshSize(coeff);
 	}
 	
+	public Key getKey(int index)
+	{
+		if(index < 0 || index >= length())
+			return null;
+		int[] k = {0, 2, 4, 5, 7, 9, 11};
+		int[] s = {1, 3, 6, 8, 10};
+		for(int i=0;i<k.length;i++) {
+			if(index == k[i])
+				return keys[i];
+			else if(i < s.length && s[i] == index)
+				return sharpKeys[i];
+		}
+		return null;
+	}
+
+	public int length()
+	{
+		return keys.length + sharpKeys.length;
+	}
 	
 }

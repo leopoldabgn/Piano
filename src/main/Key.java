@@ -62,7 +62,7 @@ public class Key extends JPanel
 		this.coeff = coeffSize;
 		setup(position, true);
 	}
-	
+
 	public void mouseSetup()
 	{
 		this.addMouseListener(new MouseAdapter() 
@@ -189,8 +189,6 @@ public class Key extends JPanel
 			e.printStackTrace();
 		}
 	}
-	
-	
 	
 	public void paintComponent(Graphics g)
 	{

@@ -52,8 +52,9 @@ public class Piano extends JPanel
 		
 		for(int i=0;i<3;i++)
 			this.add(octaves[i]);
+		this.requestFocus();
 	}
-	
+
 	public void octavesShift(ZoomBar zB)
 	{
 		int w = octaves[0].getWidth()*3;
@@ -73,4 +74,16 @@ public class Piano extends JPanel
 			return null;
 	}
 	
+	public Key getKey(int index)
+	{
+		int octLength = octaves[0].length();
+		int octave = index / octLength;
+		int key = index % octLength;
+		
+		if(octave >= 3)
+			return null;
+		
+		return octaves[octave].getKey(key);
+	}
+
 }
