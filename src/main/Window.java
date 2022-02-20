@@ -32,14 +32,17 @@ public class Window extends JFrame
 
 	public void keyboardSetup()
 	{
+		final String azerty = "azertyuiopqsdfghjklmwxcvbn";
+		final String qwerty = "";
 		this.addKeyListener(new KeyAdapter()
 		{
 			public void keyPressed(KeyEvent e)
 			{
 				super.keyPressed(e);
-				for(int i=0;i<10;i++)
-					if(e.getKeyCode() == KeyEvent.VK_A+i)
-						piano.getKey(i).play();
+				if(!Character.isLetter(e.getKeyChar()))
+					return;
+				int index = azerty.indexOf(e.getKeyChar());
+				piano.getKey(index).play();
 			}
 			public void keyReleased(KeyEvent e)
 			{
